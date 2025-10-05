@@ -74,6 +74,7 @@ php artisan serve
 ```
 
 Visit `http://127.0.0.1:8000`
+Visit for Admin Panel : `http://127.0.0.1:8000/admin/login`
 
 ---
 
@@ -81,13 +82,9 @@ Visit `http://127.0.0.1:8000`
 
 * Generated using **Dompdf**.
 * Stored in `storage/app/receipts/{submission_id}.pdf`.
-* Automatically emailed to users after payment success.
-
 ---
 
 ## 🛠 Development Notes
-
-* **Queues**: Use `php artisan queue:work` for background jobs (PDF generation, emails).
 * **Webhooks**: Expose your local server using [ngrok](https://ngrok.com/) for testing payments.
 * **Testing**: Use Stripe & Razorpay test keys.
 
@@ -104,7 +101,7 @@ php artisan tinker
 >>> \App\Models\User::create([
     'name' => 'Admin',
     'email' => 'admin@example.com',
-    'password' => bcrypt('password'),
+    'password' => 123456,
     'role' => 'admin'
 ]);
 ```
