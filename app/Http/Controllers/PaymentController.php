@@ -33,11 +33,11 @@ class PaymentController extends Controller
         $submission = Submission::findOrFail($req->submission_id); 
         $amount = (int)round($submission->amount_due * 100); 
         
-        $api = new RazorpayApi('rzp_test_KqcqwizctIhzgD', 'CVTB7tAxeiZX1fEc3GRK6F5Q'); 
+        $api = new RazorpayApi(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET')); 
 
         $order = $api->order->create([ 'amount'=>$amount, 'currency'=>$submission->currency, 'receipt'=>$submission->reference_id, 'notes'=>['submission_id'=>$submission->id] ]); 
 
-        return response()->json([ 'order'=>$order, 'key'=>'CVTB7tAxeiZX1fEc3GRK6F5Q' ]); 
+        return response()->json([ 'order'=>$order, 'key'=>env('RAZORPAY_KEY') ]); 
     
     } 
 
@@ -45,7 +45,7 @@ class PaymentController extends Controller
     { 
         $payload = $request->getContent(); 
         $signature = $request->header('X-Razorpay-Signature'); 
-        $secret = config('services.razorpay.webhook_secret') ?? config('services.razorpay.secret'); 
+        $secret = env('RAZORPAY_WEBHOOK_SECRET') ?? env('RAZORPAY_SECRET'); 
         
         try { 
             RazorpayUtils::verifyWebhookSignature($payload, $signature, $secret); 
