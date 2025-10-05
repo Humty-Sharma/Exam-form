@@ -1,7 +1,7 @@
-# 🎓 Exam Form & Payment Portal (Laravel 11)
+# 🎓 Exam Form & Payment Portal (Laravel)
 
-A backend system built with **Laravel 11** for managing exam forms and payments.
-Users can register/login, fill exam forms, pay via **Stripe** or **Razorpay**, and download PDF receipts.
+A backend system built with **Laravel** for managing exam forms and payments.
+Users can register/login, fill exam forms, pay via **Razorpay**, and download PDF receipts.
 Admins can manage forms, submissions, and payments.
 
 ---
