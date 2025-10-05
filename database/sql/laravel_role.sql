@@ -151,14 +151,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2020_07_24_184706_create_permission_tables', 1),
-(5, '2020_09_12_043205_create_admins_table', 1),
-(6, '2024_12_23_053330_create_blogs_table', 1),
-(7, '2025_10_04_160057_question', 2),
-(8, '2025_10_04_160152_option', 2),
-(9, '2025_10_04_160230_quizze', 2),
-(10, '2025_10_04_160302_question_quiz', 2),
-(11, '2025_10_04_160342_test', 2),
-(12, '2025_10_04_160402_answer', 2);
+(5, '2020_09_12_043205_create_admins_table', 1);
 
 -- --------------------------------------------------------
 
